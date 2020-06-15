@@ -2,11 +2,12 @@ var app = new Vue({
     el: '#app',
     data: {
       answers: 0,
+      counter: 0,
       hits: 0,
       questions: []
     },
       mounted () {
-      axios.get('questions.json')
+      axios.get('js/questions.json')
         .then(response => {
           this.questions = response.data.questions
         })

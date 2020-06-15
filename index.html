@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="/node_modules/bulma-extensions/dist/css/bulma-extensions.min.css">
-    <link rel="stylesheet" href="/css/app.css" type="text/css">
+    <link rel="stylesheet" href="/css/styles.css" type="text/html">
   </head>
   <body>
-    <section id="app" class="section">
-      <div class="container is-widescreen">
+  <section id="app" class="section">
+    <div class="container is-widescreen">
       <h1 class="title">
         RSK Basic Quiz App
       </h1>
@@ -26,13 +26,12 @@
           <div class="level-item">
             <div>
               <p class="heading">Hits</p>
-              <p class="title">{{ hits }}/{{ questions.length }}</p>
+              <p class="title">{{ counter }}/{{ questions.length }}</p>
             </div>
           </div>
         </div>
       </nav>
       <!-- /nav.level -->
-
       <div class="steps" id="quiz">
         <div class="step-item is-active is-success">
           <div class="step-marker">1</div>
@@ -41,17 +40,14 @@
           </div>
         </div>
         <!-- /div.step-item -->
-
         <div class="step-item">
           <div class="step-marker">2</div>
         </div>
         <!-- /div.step-item -->
-
         <div class="step-item">
           <div class="step-marker">3</div>
         </div>
         <!-- /div.step-item -->
-
         <div class="step-item">
           <div class="step-marker">
             <span class="icon">
@@ -63,7 +59,6 @@
           </div>
         </div>
         <!-- /div.step-item -->
-
         <div class="steps-content columns is-mobile">
           <div v-for="(question, index) in questions" class="step-content is-active column is-6 is-offset-3">
             <h2 class="title has-text-centered question">{{ question.question }}</h2>
@@ -78,7 +73,6 @@
           </div>
         </div>
         <!-- /div.steps-content -->
-
         <div class="steps-actions">
           <div class="steps-action">
             <a href="#" data-nav="previous" class="button is-light">Previous</a>
@@ -90,7 +84,6 @@
         <!-- /div.steps-actions -->
       </div>
       <!-- /div.steps -->
-
       <div class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
@@ -105,9 +98,7 @@
       <!-- /div.model -->
     </div>
   </section>
-
-  <!-- development version, includes helpful console warnings -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bulma-steps@2.2.1/dist/js/bulma-steps.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="js/app.js"></script>

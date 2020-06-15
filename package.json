@@ -1,0 +1,35 @@
+{
+  "name": "app2dapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsksmart/quiz-dapp.git"
+  },
+  "keywords": [
+    "javascript",
+    "dapp",
+    "decentralize",
+    "swarm",
+    "smart_contracts",
+    "vue",
+    "rsk",
+    "rif"
+  ],
+  "author": "Dulce Villarreal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsksmart/quiz-dapp/issues"
+  },
+  "homepage": "https://github.com/rsksmart/quiz-dapp#readme",
+  "dependencies": {
+    "bulma-extensions": "^6.2.7"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

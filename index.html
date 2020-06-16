@@ -3,104 +3,90 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RSK Basic Quiz App</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="/node_modules/bulma-extensions/dist/css/bulma-extensions.min.css">
-    <link rel="stylesheet" href="/css/styles.css" type="text/html">
+    <link rel="stylesheet" href="/css/app.css" type="text/html">
   </head>
   <body>
   <section id="app" class="section">
-    <div class="container is-widescreen">
-      <h1 class="title">
-        RSK Basic Quiz App
-      </h1>
-      <p class="subtitle">
-        Welcome to Cryptocurrencies Quiz Show!
-      </p>
-      <!-- Main container -->
-      <nav class="level">
-        <div class="level-left"></div>
-        <!-- Right side -->
-        <div class="level-right has-text-centered">
-          <div class="level-item">
-            <div>
-              <p class="heading">Hits</p>
-              <p class="title">{{ counter }}/{{ questions.length }}</p>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <!-- /nav.level -->
-      <div class="steps" id="quiz">
-        <div class="step-item is-active is-success">
-          <div class="step-marker">1</div>
-          <div class="step-details">
-            <p class="step-title">Start</p>
-          </div>
-        </div>
-        <!-- /div.step-item -->
-        <div class="step-item">
-          <div class="step-marker">2</div>
-        </div>
-        <!-- /div.step-item -->
-        <div class="step-item">
-          <div class="step-marker">3</div>
-        </div>
-        <!-- /div.step-item -->
-        <div class="step-item">
-          <div class="step-marker">
-            <span class="icon">
-              <i class="fa fa-flag"></i>
-            </span>
-          </div>
-          <div class="step-details">
-            <p class="step-title">Finish</p>
-          </div>
-        </div>
-        <!-- /div.step-item -->
-        <div class="steps-content columns is-mobile">
-          <div v-for="(question, index) in questions" class="step-content is-active column is-6 is-offset-3">
-            <h2 class="title has-text-centered question">{{ question.question }}</h2>
-            <div v-for="(value, key) in question.options"  class="tile is-ancestor">
-              <div class="tile is-12">
-                <div class="tile box option-box answer" v-on:click.self="selectOption" :data-index="index" :data-key="key" :data-value="value">
-                  <p class="subtitle">{{ key }})</p>
-                  <p>{{ value }}</p>
+    <div class="container">
+        <h1 class="title">
+            RSK Basic Quiz App
+        </h1>
+        <p class="subtitle">
+            Welcome to Cryptocurrencies Quiz Show!
+        </p>
+        <nav class="level">
+            <div class="level-left"></div>
+            <!-- Right side -->
+            <div class="level-right has-text-centered">
+              <div class="level-item">
+                <div>
+                  <p class="heading">Hits</p>
+                  <p class="title">{{ counter }}/{{ questions.length }}</p>
                 </div>
               </div>
             </div>
-          </div>
+        </nav>
+        <!-- /nav.level -->
+        <div class="steps" id="stepsDemo">
+            <div class="step-item is-active is-success">
+                <div class="step-marker">1</div>
+            </div>
+            <div class="step-item">
+                <div class="step-marker">2</div>
+            </div>
+            <div class="step-item">
+                <div class="step-marker">3</div>
+            </div>
+            <div class="step-item">
+                <div class="step-marker">4</div>
+            </div>
+            <div class="steps-content columns is-mobile">
+                <div v-for="(question, index) in questions" class="step-content is-active column is-6 is-offset-3">
+                    <h2 class="title has-text-centered question">{{ question.question }}</h2>
+                    <div v-for="(value, key) in question.options"  class="tile is-ancestor">
+                        <div class="tile is-12">
+                            <div class="tile box option-box answer" v-on:click.self="selectOption" :data-index="index" :data-key="key" :data-value="value">
+                                <p class="subtitle">{{ key }})</p>
+                                <p>{{ value }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="steps-actions">
+                <div class="steps-action">
+                  <a href="#" data-nav="previous" class="button is-light">Previous</a>
+                </div>
+                <div class="steps-action">
+                  <a href="#" data-nav="next" class="button is-light">Next</a>
+                </div>
+              </div>
+              <!-- /div.steps-actions -->
         </div>
-        <!-- /div.steps-content -->
-        <div class="steps-actions">
-          <div class="steps-action">
-            <a href="#" data-nav="previous" class="button is-light">Previous</a>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="has-text-centered">
+                <h2 class="title">Congratulations!!!</h2>
+                <h2 class="subtitle">You have {{ hits }} / {{ questions.length }} rigth answers</h2>
+                <button v-on:click="closeModal" class="button is-success">Ok</button>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close" v-on:click="closeModal"></button>
           </div>
-          <div class="steps-action">
-            <a href="#" data-nav="next" class="button is-light">Next</a>
-          </div>
-        </div>
-        <!-- /div.steps-actions -->
-      </div>
-      <!-- /div.steps -->
-      <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-          <div class="has-text-centered">
-            <h2 class="title">Congratulations!!!</h2>
-            <h2 class="subtitle">You have {{ hits }} / {{ questions.length }} rigth answers</h2>
-            <button v-on:click="closeModal" class="button is-success">Ok</button>
-          </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" v-on:click="closeModal"></button>
-      </div>
-      <!-- /div.model -->
     </div>
   </section>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bulma-steps@2.2.1/dist/js/bulma-steps.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    bulmaSteps.attach()
+  </script>
   </body>
 </html>

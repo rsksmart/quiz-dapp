@@ -1,12 +1,12 @@
 var app = new Vue({
     el: '#app',
     data: {
-      answers: 0,
       counter: 0,
+      answers: [],
       hits: 0,
       questions: []
     },
-      mounted () {
+    mounted () {
       axios.get('js/questions.json')
         .then(response => {
           this.questions = response.data.questions
@@ -25,19 +25,12 @@ var app = new Vue({
           const answer = element.dataset.key
           const index =  parseInt(element.dataset.index) + 1
           const question = this.getQuestion(index)
-          // TODO: make request
-          if (answer === question.answer) {
-            this.hits++
-            element.classList.add('right-answer')
-          } else {
-            element.classList.add('wrong-answer')
-          }
-          this.answers++
-          if (this.answers === this.questions.length) {
+          this.answers.push(answer)
+          this.counter++
+          if (this.counter === this.questions.length) {
             // show modal and return
             document.querySelector('div.modal').classList.add('is-active')
           }
-  
           setTimeout(function () {
             // trigger click event on <a> next button
             document.querySelector('a[data-nav="next"]').click()

@@ -7,7 +7,7 @@ var app = new Vue({
       questions: []
     },
     mounted () {
-      axios.get('js/questions.json')
+      axios.get('http://localhost:8500/bzz-raw:/6ab1d7b2a738796daaeafb4c44afcb643b2f8d3d7e7af706b9e1115c0a69c6c8')
         .then(response => {
           this.questions = response.data.questions
         })

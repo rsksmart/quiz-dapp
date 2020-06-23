@@ -1,7 +1,7 @@
 pragma solidity ^0.4.14;
 contract Quiz {
     address public owner;
-    uint8[4] rightAnswers = [2, 1, 1, 2];
+    uint8[4] rightAnswers = [2, 3, 1, 4];
     address[] public players;
     uint8[] public playerHits;
 

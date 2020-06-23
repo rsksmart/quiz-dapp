@@ -2,7 +2,7 @@
     "questions": [
         {
             "id": 1,
-            "question": "What does HTML stand for?",
+            "question": "What does CSS stand for?",
             "nextId": 2,
             "previousId": null,
             "options": {

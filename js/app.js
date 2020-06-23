@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+      contracts: {},
       counter: 0,
       answers: [],
       hits: 0,
@@ -57,7 +58,7 @@ var app = new Vue({
             element.classList.remove('answer') // disable css hover effect
           })
           const element = evt.target
-          const answer = element.dataset.key
+          const answer = element.dataset.i + 1
           const index =  parseInt(element.dataset.index) + 1
           const question = this.getQuestion(index)
           this.answers.push(answer)
@@ -88,10 +89,11 @@ var app = new Vue({
               .then(instance => {
                   const quizInstance = instance
 
-                  return quizInstance.answerQuestions(this.answers.join("."), { from: account })
+                  return quizInstance.answerQuestions(this.answers, { from: account })
               })
               .then(result => {
                   document.querySelector('div.modal').classList.remove('is-active')
+                  console.log(result.logs[0].args.hitsCounter.c);
               })
               .catch(err => {
                   console.error("=======================")

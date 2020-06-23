@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>IOVlabs Games!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="/node_modules/bulma-extensions/dist/css/bulma-extensions.min.css">
@@ -47,9 +47,9 @@
             <div class="steps-content columns is-mobile">
                 <div v-for="(question, index) in questions" class="step-content is-active column is-6 is-offset-3">
                     <h2 class="title has-text-centered question">{{ question.question }}</h2>
-                    <div v-for="(value, key) in question.options"  class="tile is-ancestor">
+                    <div v-for="(value, key, i) in question.options"  class="tile is-ancestor">
                         <div class="tile is-12">
-                            <div class="tile box option-box answer" v-on:click.self="selectOption" :data-index="index" :data-key="key" :data-value="value">
+                            <div class="tile box option-box answer" v-on:click.self="selectOption" :data-index="index" :data-key="key" :data-value="value" :data-i="i">
                                 <p class="subtitle">{{ key }})</p>
                                 <p>{{ value }}</p>
                             </div>
@@ -73,10 +73,10 @@
               <div class="has-text-centered">
                 <h2 class="title">Congratulations!!!</h2>
                 <h2 class="subtitle">You have {{ hits }} / {{ questions.length }} rigth answers</h2>
-                <button v-on:click="closeModal" class="button is-success">Ok</button>
+                <button v-on:click="sendQuestions" class="button is-success">Ok</button>
               </div>
             </div>
-            <button class="modal-close is-large" aria-label="close" v-on:click="closeModal"></button>
+            <button class="modal-close is-large" aria-label="close" v-on:click="sendQuestions"></button>
           </div>
     </div>
   </section>

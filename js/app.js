@@ -16,6 +16,7 @@ var app = new Vue({
       closeModal: function () {
         document.querySelector('div.modal').classList.remove('is-active')
       },
+      // Her, you will add the  initWeb3 method
       selectOption: function (evt) {
         if (evt) {
           document.querySelectorAll('div.answer').forEach(element => {

@@ -305,10 +305,11 @@ Your data source is not static anymore. Your quiz application is now loading its
 
 ### Initialize truffle
 
-Initialize truffle using the commands below;
+Change your directory and initialize truffle using the commands below;
 
 ```bash=
-truffle init
+$ cd ..
+$ truffle init
 ```
 
 It will create the `contract` folder, `migrations`, and `truffle-config.js` file.

@@ -411,7 +411,6 @@ npm install @truffle/hdwallet-provider dotenv --save
 Create a new file named `.env` in the root directory of your project and write your mnemonic on it.
 
 ```bash=
-$ cd .. # change to root directory
 $ touch .env
 ```
 

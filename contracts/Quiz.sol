@@ -1,9 +1,11 @@
 pragma solidity ^0.4.14;
+
 contract Quiz {
     address public owner;
     uint8[4] rightAnswers = [2, 3, 1, 4];
     address[] public players;
     uint8[] public playerHits;
+    string public questions;
 
     event AnswerEvent(uint8 hitsCounter);
 
@@ -21,6 +23,7 @@ contract Quiz {
 
     function answerQuestions (uint8[] playerAnswers) public returns (uint8) {
         uint8 hits;
+
         for (uint i = 0; i < playerAnswers.length; i++) {
             if (playerAnswers[i] == rightAnswers[i]) {
                 hits++;
@@ -28,7 +31,9 @@ contract Quiz {
         }
         players.push(msg.sender);
         playerHits.push(hits);
+
         emit AnswerEvent(hits);
+
         return hits;
     }
 }

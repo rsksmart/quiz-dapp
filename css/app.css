@@ -1,0 +1,11 @@
+div.tile.is-ancestor {
+    margin-top: 0;
+}
+
+.selected {
+    background-color: lightgreen;
+}
+
+div.modal h2 {
+    color: white;
+}

@@ -2,57 +2,51 @@
     "questions": [
         {
             "id": 1,
-            "question": "What does CSS stand for?",
+            "question": "What does “Internet of Value” stand for?",
             "nextId": 2,
             "previousId": null,
             "options": {
-                "a": "Computer Style Sheets",
-                "b": "Creative Style Sheets",
-                "c": "Cascading Style Sheets",
-                "d": "Colourful Style Sheets"
+                "a": "Internet based on the values of the society we live in.",
+                "b": "Internet where the exchange of money (or any asset) is exchanged through the network as information is today.",
+                "c": "The ability to connect people with many different values around the world, with no intermediaries.",
+                "d": "Internet where digital assets are managed freely."
             }
         },
         {
             "id": 2,
-            "question": "Where in an HTML document is the correct place to refer to an external style sheet?",
-            "nextId": 2,
+            "question": "What is RSK?",
+            "nextId": 3,
             "previousId": 1,
             "options": {
-                "a": "In the <head> section",
-                "b": "In the <body> section",
-                "c": "At the end of the document",
-                "d": "You can't refer to an external style sheet"
+                "a": "A private blockchain created to run smart contracts using bitcoins.",
+                "b": "A Dapp created to exchange SmartCoins with Bitcoins",
+                "c": "An open source smart contract platform that uses bitcoins as fuel",
+                "d": "A platform to solve scalability problems on the Ethereum network."
             }
         },
         {
             "id": 3,
-            "question": "Which HTML tag is used to define an internal style sheet?",
+            "question": "What does RIF stand for?",
             "nextId": 4,
             "previousId": 2,
             "options": {
-                "a": "<style>",
-                "b": "<script>",
-                "c": "<headStyle>",
-                "d": "<css>"
+                "a": "RSK Infrastructure Framework",
+                "b": "RSK Smart Contract Network ",
+                "c": "RSK Innovation Factory",
+                "d": "None of the above"
             }
         },
         {
             "id": 4,
-            "question": "Which HTML attribute is used to define inline styles?",
+            "question": "RSK Blockchain and Bitcoin blockchain are connected using...?",
             "nextId": null,
             "previousId": 3,
             "options": {
-                "a": "class",
-                "b": "style",
-                "c": "font",
-                "d": "styles"
+                "a": "Hash of the blocks in both blockchains",
+                "b": "DECOR + GHOSH with PBFT fallback",
+                "c": "Merge mining",
+                "d": "A 2-way peg implementation"
             }
         }
-    ],
-    "answers": {
-        "1": "c",
-        "2": "a",
-        "3": "a",
-        "4": "b"
-    }
+    ]
 }

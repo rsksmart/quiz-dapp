@@ -12,8 +12,7 @@ by Dev Advocate Dulce Villarreal
   * [Install dependencies](#Install-dependencies)
   * [Run the project](#Run-the-project)
 * [App to dApp](#App-to-dApp)
-  * [Change the branch](#Change-the-branch)
-  * [Run swarm](#Run-swarm)
+* [Run swarm](#Run-swarm)
   * [Getting the questions from swarm](#Getting-the-questions-from-swarm)
   * [Init truffle](#Init-truffle)
   * [Specify the soldity compiler version](#Specify-the-soldity-compiler-version)
@@ -223,19 +222,6 @@ Note the questions are stored in the `questions.json` file.
 
 It's time to convert your simple plain JS app to an dApp!
 
-### Change the branch
-
-Change to `tutorial` branch
-
-```bash=
-$ git checkout tutorial
-```
-
-Install dependencies
-
-```bash=
-$ npm install 
-```
 
 ### Run swarm
 
